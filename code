@@ -1,0 +1,73 @@
+# Lab Exercise 5: Zoo Management System
+
+# 1. Base Class
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def make_sound(self):
+        print("Some generic animal sound.")
+
+    def describe(self):
+        print("Name:", self.name, "| Age:", self.age, "years old")
+
+
+# 2. Derived Classes
+
+class Lion(Animal):
+    def __init__(self, name, age):
+        super().__init__(name, age)
+
+    def make_sound(self):
+        print(self.name + " says: Roar!")
+
+    def roar(self):
+        print("Roars loudly.")
+
+
+class Bird(Animal):
+    def __init__(self, name, age):
+        super().__init__(name, age)
+
+    def make_sound(self):
+        print(self.name + " says: Chirp!")
+
+    def fly(self):
+        print("Flies high in the sky.")
+
+
+class Reptile(Animal):
+    def __init__(self, name, age):
+        super().__init__(name, age)
+
+    def make_sound(self):
+        print(self.name + " says: Hiss!")
+
+    def crawl(self):
+        print("Crawls stealthily.")
+
+
+# 3. Testing
+
+simba = Lion("Simba", 5)
+tweety = Bird("Tweety", 2)
+rex = Reptile("Rex", 8)
+
+# Call describe() on each instance
+print("--- Animal Descriptions ---")
+simba.describe()
+tweety.describe()
+rex.describe()
+
+# Call make_sound() to demonstrate polymorphism
+print("\n--- Animal Sounds ---")
+simba.make_sound()
+tweety.make_sound()
+rex.make_sound()
+
+# Call specific behaviors
+print("\n--- Specific Behaviors ---")
+simba.roar()
+tweety.fly()
+rex.crawl()
